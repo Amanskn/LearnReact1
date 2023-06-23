@@ -1,6 +1,15 @@
 import React from  'react'
 import  ReactDOM  from 'react-dom'
 
+// JSX Rules
+// return single element
+// div / section / article or Fragment
+// use camelCase for html attribute
+// className instead of class
+// close every element
+// formatting
+
+
 function Greeting(){
   return <>
     <div>
@@ -9,14 +18,7 @@ function Greeting(){
   </>
 }
 
-// above and this code both are same
-const Greet=()=>{
-  return React.createElement('div',{},React.createElement('h1',{},"Heading"))
-}
 
-// const Greet=()=>{
-//   return React.createElement('div',{},'div')
-// }
 
 
 
