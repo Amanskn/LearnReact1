@@ -3,7 +3,7 @@ import  ReactDOM  from 'react-dom'
 
 // JSX Rules
 // return single element
-// div / section / article or Fragment
+// div / section / article or Fragment(<></> or <React.Fragment></React.Fragment>)
 // use camelCase for html attribute
 // className instead of class
 // close every element
