@@ -22,23 +22,21 @@ const books=[
 
 
 function BookList(){
-  const ab=books.map((book,i)=>{
-          
-          return <Book img={book.img} title={book.title} author={book.author}/>
-  
-        });
   return (
     <section className='booklist'>
 
-      {ab}
+      
       
       {books.map((book,i)=>{
-        
-        return <Book img={book.img} title={book.title} author={book.author}/>
 
+        // --------one way
+        // return <Book img={book.img} title={book.title} author={book.author}/>
+
+        // -----second way
+        return <Book book={book}/>
+        // return <Book img={book.img} title={book.title} author={book.author}/>
       })}
-      {["Apple","banana"]}
-      {ab}
+      
       {/* <Book img={books[1].img} title={books[1].title} author={books[1].author}/>
       <Book img={books[0].img} title={books[0].title} author={books[0].author}/>
       <Book img={books[1].img} title={books[1].title} author={books[1].author}/>
@@ -49,9 +47,11 @@ function BookList(){
   )
 }
 
-const Book = ({img,title,author})=>{
-  // console.log("This is the props",props.children)
+const Book = (props)=>{
+  console.log("This is the props",props.book)
+   const {img,title,author}=props.book;
   return (
+
     <article className='book'>
       <img src={img} alt="" />
       <h1>{title}</h1>
