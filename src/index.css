@@ -1,8 +1,38 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: antiquewhite;
+}
+.booklist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .book{
-    display: inline-block;
-    margin: 0 10px;
+    
+    margin: 5px 10px;
+    padding: 10px;
+    background-color: rgb(202, 183, 159);
+    border-radius:5px;
+    width:200px;display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.book>img{
+    width: 100%;
+    height: auto;
+    /* object-fit: contain; */
+    /* border: 2px solid green; */
+}
+.details{
+    margin-top: 5px;
+    /* border: 2px solid pink; */
+    border-radius:5px ;
+    background-color: rgb(172, 147, 117);
+    text-align: center;
+    padding: 5px 0;
+    box-sizing: border-box;
 }
