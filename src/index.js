@@ -1,34 +1,48 @@
 import React from  'react'
 import  ReactDOM  from 'react-dom'
-
-// JSX Rules
-// return single element
-// div / section / article or Fragment(<></> or <React.Fragment></React.Fragment>)
-// use camelCase for html attribute
-// className instead of class
-// close every element
-// formatting
+import './index.css'
 
 
-function Greeting(){
-  const num="number";
-  const styles={
-    color:"green",
-    fontSize:'1rem'
-  }
-  return <>
-    <div style={styles}>
-      <h1>Heading</h1>
-      <p>{num.toLowerCase()}</p>
-      {/* Below statement is going to throw an error because inside {} there should  */}
-      {/* always be a value instead of a statement, Got it*/}
-      {/* <p>{let a =90;}</p> */}
-      <Greet/>
-    </div>
-  </>
+const img='https://m.media-amazon.com/images/I/91upCY8QpWL._AC_UY327_FMwebp_QL65_.jpg';
+const title='title 1';
+const author = 'author 1'
+
+
+
+
+
+
+function BookList(){
+  return (
+    <section className='booklist'>
+      <Book price={234}>
+        <h6>H3 children</h6>
+        <h1>h1</h1>
+        <h4>h3</h4>
+        <h5>h5</h5>
+       
+        </Book>
+      <Book price={23}/>
+      <Book price={245}/>
+      
+    </section>
+  )
 }
 
-const Greet = ()=><h2>Greet</h2>
+const Book = (props)=>{
+  console.log("This is the props",props.children)
+  return (
+    <article className='book'>
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+     
+        {props.children}
+      <p> &#8377;{props.price}/-</p>
+    </article>
+  )
+}
+
 
 
 
@@ -42,7 +56,7 @@ const Greet = ()=><h2>Greet</h2>
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Greeting />
+    <BookList />
   </React.StrictMode>
 );
 
