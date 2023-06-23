@@ -44,32 +44,14 @@ const books=[
 function BookList(){
   return (
     <section className='booklist'>
-
-      
-      
       {books.map((book,i)=>{
-
-        // --------one way
-        // return <Book img={book.img} title={book.title} author={book.author}/>
-
-        // -----second way
-        return <Book book={book} key={book.img}/>
-        // return <Book img={book.img} title={book.title} author={book.author}/>
+        return <Book {...book} key={book.img}/>
       })}
-      
-      {/* <Book img={books[1].img} title={books[1].title} author={books[1].author}/>
-      <Book img={books[0].img} title={books[0].title} author={books[0].author}/>
-      <Book img={books[1].img} title={books[1].title} author={books[1].author}/>
-      <Book img={books[0].img} title={books[0].title} author={books[0].author}/> */}
-      
-      
     </section>
   )
 }
 
-const Book = (props)=>{
-  // console.log("This is the props",props.book)
-   const {img,title,author}=props.book;
+const Book = ({img,author,title})=>{
   return (
 
     <article className='book'>
