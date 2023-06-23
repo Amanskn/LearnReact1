@@ -11,7 +11,7 @@ import  ReactDOM  from 'react-dom'
 
 
 function Greeting(){
-  const num=907;
+  const num="number";
   const styles={
     color:"green",
     fontSize:'1rem'
@@ -19,7 +19,7 @@ function Greeting(){
   return <>
     <div style={styles}>
       <h1>Heading</h1>
-      <p>{num}</p>
+      <p>{num.toLowerCase()}</p>
       {/* Below statement is going to throw an error because inside {} there should  */}
       {/* always be a value instead of a statement, Got it*/}
       {/* <p>{let a =90;}</p> */}
